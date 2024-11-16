@@ -17,5 +17,5 @@ connectDB();
 app.use('/api', recipeRoutes); // All recipe-related routes are prefixed with `/api`
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
