@@ -13,7 +13,7 @@ function Home() {
     // Fetch all recipes on initial load (GET /recipes)
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/recipes');  // Replace with your backend URL
+        const response = await axios.get('http://localhost:3002/api/recipes');  // Replace with your backend URL
         setRecipes(response.data);
       } catch (err) {
         setError('Error fetching recipes');
@@ -27,7 +27,7 @@ function Home() {
   const handleSearch = async () => {
     try {
       // Send ingredients to the backend for search (POST /search-recipes)
-      const response = await axios.post('http://localhost:5000/api/search-recipes', {
+      const response = await axios.post('http://localhost:3002/api/search-recipes', {
         ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()) // Split ingredients by comma and trim spaces
       });
       setRecipes(response.data.data);  // Set the matched recipes

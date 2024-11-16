@@ -9,7 +9,7 @@ function RecipeRecommendations() {
 
   const getRecommendations = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/recommend-recipes', { selectedRecipes });
+      const response = await axios.post('http://localhost:3002/api/recommend-recipes', { selectedRecipes });
       setRecipes(response.data.data);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
